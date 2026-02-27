@@ -66,12 +66,18 @@ function pvm-update-snapshot() {
 	popd
 }
 
+alias pvm1dev="npm run dev -- -- --name sangpark-pvm-1.vaultpvm.com"
+
 function pvm1() { 
 	pvm $1 -i 1
 }
 
 function pvm2() { 
 	pvm $1 -i 2
+}
+
+function pvm3() { 
+	pvm $1 -i 3
 }
 
 function pvms() {
