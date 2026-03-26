@@ -22,9 +22,11 @@ alias vcrmbuild.full.withtest='./gradlew build'
 alias vcrmtest="./gradlew test -x runJSTests -x runJSLint"
 alias vcrmtest.full="./gradlew test"
 
-alias hd.pvm1="./gradlew hotDeploy -PhotDeploy.host=sangpark-pvm-1.vaultpvm.com"
-alias hd.pvm2="./gradlew hotDeploy -PhotDeploy.host=sangpark-pvm-2.vaultpvm.com"
+alias hd.pvm1="./gradlew hotDeploy -PhotDeploy.host=tooling.sangpark-pvm-1.vaultpvm.com"
+alias hd.pvm2="./gradlew hotDeploy -PhotDeploy.host=tooling.sangpark-pvm-2.vaultpvm.com"
 
+alias hd.pvm1.full="./gradlew hotDeploy -PhotDeploy.host=tooling.sangpark-pvm-1.vaultpvm.com --full"
+alias hd.pvm2.full="./gradlew hotDeploy -PhotDeploy.host=tooling.sangpark-pvm-2.vaultpvm.com --full"
 
 # alias vcrmbuild='mvn clean install -T 2C -DskipTests -pl "-ui"'
 # alias vcrmbuild.withtest='mvn clean install -T 2C -pl "-ui"'
