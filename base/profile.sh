@@ -18,6 +18,7 @@ export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"  # sbin for brew
 export PATH="$PATH:/user/bin"
 export PATH="$PATH:/opt/homebrew/bin" # where homebrew is installed on my personal laptop
+export PATH="$HOME/.local/bin:$PATH" # for claude cli
 
 ## setup rvm
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
