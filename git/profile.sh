@@ -1,7 +1,7 @@
 load_file "git/git-fzf.sh"
 
 # add git to path (for git-del)
-export PATH=$PATH:$BASH_CONFIGS_DIR/git
+export PATH=$PATH:$BASH_CONFIGS_DIR/git:/Users/sang.park/dev/utils/git/git-plus
 
 
 
@@ -33,8 +33,6 @@ function gllclone {
 function gllrebase {
    git rebase -i HEAD~$1
 }
-
-export PATH=$PATH:/Users/sang.park/dev/utils/git/git-plus
 
 function pushb {
    local branch=$1
