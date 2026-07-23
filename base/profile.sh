@@ -20,11 +20,6 @@ export PATH="$PATH:/user/bin"
 export PATH="$PATH:/opt/homebrew/bin" # where homebrew is installed on my personal laptop
 export PATH="$PATH:$HOME/.local/bin" # where claude code is installed
 
-## setup rvm
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
 eval "$($HOMEBREW_HOME/bin/brew shellenv)"
@@ -34,7 +29,6 @@ eval "$($HOMEBREW_HOME/bin/brew shellenv)"
 
 # increases file descriptor limit
 # ulimit -n 1024
-
 
 ## Aliases
 
@@ -57,12 +51,6 @@ function mkcd() {
 }
 
 alias o="open"
-
-### Markdown Aliases ###
-
-alias mdless="pandoc -s -f markdown -t man \!* | groff -T utf8 -man | less"
-alias mdcat="pandoc -s -f markdown -t man \!* | groff -T utf8 -man | cat"
-alias mdtail="pandoc -s -f markdown -t man \!* | groff -T utf8 -man | tail"
 
 alias sl="subl"
 

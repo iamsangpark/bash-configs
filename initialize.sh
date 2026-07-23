@@ -11,32 +11,27 @@ function load_profile() {
 }
 
 function load_profiles() {
-   # load base profile
 	load_profile base
 
-	# load zsh profile
 	load_profile zsh
 
-	# load bash profile
 	load_profile bash
 
 	load_profile node
 
 	load_profile dev
 
-	# # load git profile
 	load_profile git
-
-	# # load docker profile
-	load_profile docker
 
 	load_profile python
 
 	load_profile veeva
 
-	load_profile vagrant
+	# load_profile vagrant
 
 	load_profile ruby
+
+	# load_profile docker
 
 	# load_profile react-native
 
