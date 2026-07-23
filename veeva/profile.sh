@@ -7,14 +7,7 @@ export PATH="$PATH:$HOME/.claudew/bin"
 
 export MYINSIGHTS_STUDIO_PROJECT_DIRECTORY=/Users/sangpark-mbpr16/dev/vaultcrm/myinsights-studio
 
-alias vvlocal='sudo ssh -p 2222 -i ~/.vagrant.d/insecure_private_key root@my.vaultdev.com -L 443:127.0.0.1:8443 -L 80:127.0.0.1:8080 -L 4567:127.0.0.1:4567 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
-
-alias sshLocal="cd $VAGRANT_ROOT/prebuilt; SSHUSER=root vagrant ssh"
-alias sshVagrant='SSHUSER=root vagrant ssh'
-
-alias hdCrm="$DEV_TOOLS_ROOT/deployment/hot_deploy_family.py -f vaultcrm_v"
-
-alias vvgup='MEMORY=10000 vagrant up'
+# # Gradle Build Alias
 
 alias vcrmbuild='./gradlew build -x npmCleanInstall -x buildJSNode -x RunJSTests -x test -x aggregateJavadoc -x javadoc'
 alias vcrmbuild.withtest='./gradlew build -x npmCleanInstall -x buildJSNode -x RunJSTests -x RunJSLint'
@@ -33,14 +26,6 @@ alias hd.pvm2="./gradlew hotDeploy -PhotDeploy.host=tooling.sangpark-pvm-2.vault
 alias hd.pvm1.full="./gradlew hotDeploy -PhotDeploy.host=tooling.sangpark-pvm-1.vaultpvm.com --full"
 alias hd.pvm2.full="./gradlew hotDeploy -PhotDeploy.host=tooling.sangpark-pvm-2.vaultpvm.com --full"
 
-# alias vcrmbuild='mvn clean install -T 2C -DskipTests -pl "-ui"'
-# alias vcrmbuild.withtest='mvn clean install -T 2C -pl "-ui"'
-
-# alias vcrmbuild.full.withtest='mvn clean install -T 2C'
-# alias vcrmbuild.full='mvn clean install -T 2C -DskipTests'
-
-# alias vcrmbuild.test="mvn clean test -T 2C"
-
 function copy-jira() {
 	local jira="$(git rev-parse --abbrev-ref HEAD | grep -Eo '((VCRM)|(CRM))-\d*')"
 	echo "Jira is ${jira}"
@@ -53,16 +38,7 @@ alias cd.vcrm="cd ~/dev/veevavaultfamilies/vaultcrm"
 alias cd.xpn="cd ~/dev/veevavaultfamilies/xpages-native"
 alias cd.worktree="cd ~/dev/worktrees"
 
-# PVM related aliases
-
-function pvm-update-snapshot() {
-	pushd
-	cd ~/.m2/repository/com/veeva/vault/app/vaultcrm/vaultapp-package
-	local snapshot_folder="sang.park@sangpark-pvm-2.vaultpvm.com:/home/sang.park/snapshots"
-	scp -r "$1-SNAPSHOT" "$snapshot_folder"
-	scp -r maven-metadata-local.xml "$snapshot_folder"
-	popd
-}
+# # PVM related aliases
 
 alias pvm1dev="npm run dev -- -- --name sangpark-pvm-1.vaultpvm.com"
 
@@ -81,3 +57,40 @@ function pvm3() {
 function pvms() {
 	pvm $1 -i 1 && pvm $1 -i 2 && pvm $1 -i 3
 }
+
+# # Common commands
+
+alias storybook="npm run storybook"
+alias cleaninstall="npm run clean-install"
+
+# # Old Aliases
+
+# ## Vagrant related Aliases
+
+# alias vvlocal='sudo ssh -p 2222 -i ~/.vagrant.d/insecure_private_key root@my.vaultdev.com -L 443:127.0.0.1:8443 -L 80:127.0.0.1:8080 -L 4567:127.0.0.1:4567 -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no'
+
+# alias sshLocal="cd $VAGRANT_ROOT/prebuilt; SSHUSER=root vagrant ssh"
+# alias sshVagrant='SSHUSER=root vagrant ssh'
+
+# alias hdCrm="$DEV_TOOLS_ROOT/deployment/hot_deploy_family.py -f vaultcrm_v"
+
+# alias vvgup='MEMORY=10000 vagrant up'
+
+# ## Maven Liases
+
+# function pvm-update-snapshot() {
+# 	pushd
+# 	cd ~/.m2/repository/com/veeva/vault/app/vaultcrm/vaultapp-package
+# 	local snapshot_folder="sang.park@sangpark-pvm-2.vaultpvm.com:/home/sang.park/snapshots"
+# 	scp -r "$1-SNAPSHOT" "$snapshot_folder"
+# 	scp -r maven-metadata-local.xml "$snapshot_folder"
+# 	popd
+# }
+
+# alias vcrmbuild='mvn clean install -T 2C -DskipTests -pl "-ui"'
+# alias vcrmbuild.withtest='mvn clean install -T 2C -pl "-ui"'
+
+# alias vcrmbuild.full.withtest='mvn clean install -T 2C'
+# alias vcrmbuild.full='mvn clean install -T 2C -DskipTests'
+
+# alias vcrmbuild.test="mvn clean test -T 2C"
