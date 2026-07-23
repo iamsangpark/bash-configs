@@ -47,20 +47,11 @@ function copy-jira() {
 	echo -n "$jira" | pbcopy
 }
 
-export SURVEY_P1_EPIC="epic.branch/233/VCRM-8015-Surveys"
-export SURVEY_P2_EPIC="epic.branch/242/VCRM-27371-Survey-Phase-2"
-export SURVEY_P3_EPIC="epic.branch/243/VCRM-36282-survey-phase3-translation"
-export SURVEY_P4_EPIC="epic.branch/243/VCRM-53814-Surveys-for-ChildAccounts-epic"
-export DOC_INT_CALL_EPIC="epic.branch/253/VCRM-40641_Documented_Interest_OL"
-export DOC_INT_ACCOUNT_EPIC="epic.branch/252/VCRM-116631-Documented-Interest-AccountRelatedList-Epic"
+# # Alias for common folders
 
-export EPIC_BRANCH="epic.branch/251/VCRM-74400-Surveys-25R1.2"
-
-alias gitepic="git checkout $EPIC_BRANCH"
-alias gitmergeepic="git merge $EPIC_BRANCH"
-# alias setfeatbranch="export FEAT_BRANCH=$(git rev-parse --abbrev-ref HEAD | grep -Eo '((VCRM)|(CRM))-\d*')"
-
-alias vg.reload="MEMORY=10000 vagrant reload"
+alias cd.vcrm="cd ~/dev/veevavaultfamilies/vaultcrm"
+alias cd.xpn="cd ~/dev/veevavaultfamilies/xpages-native"
+alias cd.worktree="cd ~/dev/worktrees"
 
 # PVM related aliases
 
@@ -88,5 +79,5 @@ function pvm3() {
 }
 
 function pvms() {
-	pvm $1 -i 1 && pvm $1 -i 2
+	pvm $1 -i 1 && pvm $1 -i 2 && pvm $1 -i 3
 }

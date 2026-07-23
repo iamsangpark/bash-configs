@@ -20,9 +20,9 @@ function load_profiles() {
 	# load bash profile
 	load_profile bash
 
-	load_profile dev
-
 	load_profile node
+
+	load_profile dev
 
 	# # load git profile
 	load_profile git
