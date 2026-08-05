@@ -22,6 +22,8 @@ if type brew &>/dev/null; then
     compinit
 fi  
 
+source "$BASH_CONFIGS_DIR/zsh/spaceshiprc.zsh"
+
 export LESS=-R
 
 export PATH="$HOME/.jenv/bin:$PATH"

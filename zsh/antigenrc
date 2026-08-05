@@ -11,7 +11,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle kiurchv/asdf.plugin.zsh
 
 # Select theme
-antigen theme denysdovhan/spaceship-prompt
+antigen theme spaceship-prompt/spaceship-prompt
 
 # Tell Antigen that you're done
 antigen apply

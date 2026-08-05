@@ -63,6 +63,9 @@ function pvms() {
 alias storybook="npm run storybook"
 alias cleaninstall="npm run clean-install"
 
+export JDKMAN_HOME="$HOME/.jdkman"
+eval "$("$JDKMAN_HOME/bin/jdkman" shellenv)"
+
 # # Old Aliases
 
 # ## Vagrant related Aliases
